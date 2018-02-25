@@ -8,8 +8,8 @@
 - [ethereum-White-Paper](https://github.com/ethereum/wiki/wiki/White-Paper)
 
 ## books
-- 《精通比特币》
-- 《Bitcoin and Cryptocurrency Technologies》
+- [精通比特币](https://github.com/bitcoinbook/bitcoinbook)
+- [Bitcoin and Cryptocurrency Technologies](https://lopp.net/pdf/princeton_bitcoin_book.pdf)
 
 ## 动手搭建一个区块链
 - [fisco-bcos](https://github.com/FISCO-BCOS)
