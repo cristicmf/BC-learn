@@ -27,3 +27,57 @@
 #### 框架
 - [truffle](https://github.com/trufflesuite/truffle)
 - [zeppelin-solidity](https://github.com/OpenZeppelin/zeppelin-solidity)
+
+---
+### 智能合约实践
+#### 使用模拟器开发智能合约
+##### 1. 开发的客户端 
+1. 测试开发：[EtherumJS TestRPC](https://github.com/trufflesuite/ganache-cli)
+2. 正式开发[geth](https://github.com/ethereum/go-ethereum)
+
+  - 在自己的私有链条上创建用户
+    ```
+    geth  --identity "newEth" --rpc --rpcaddr "0.0.0.0" --rpccorsdomain "*" --datadir "cdata"  --port 30303 --rpcapi "personal,db,eth,net,web3" --networkid 999  --rpcport 8549  --targetgaslimit 4712388 console
+    ```
+  - 创建账号和解锁账号
+    ```
+    > eth.accounts
+    > personal.newAccount("123456")
+    > personal.unlockAccount(eth.accounts[0], "123456", 20*(60*1000))
+    ```
+
+#### 2. 使用truffle开发框架 
+##### 1. [框架一遍truffle API](http://truffleframework.com/)
+- 实践MetaCoin,具体的步骤参考官网
+```
+mkdir MetaCoin
+cd MetaCoin
+truffle unbox metacoin
+```
+
+##### 2. 智能合约交互
+[重点理解合约交互](http://truffleframework.com/docs/getting_started/contracts)
+##### [solidity API](https://solidity.readthedocs.io/en/v0.4.20/)
+##### 3.相关规范 
+- [使用包管理](http://truffleframework.com/docs/getting_started/packages-npm)
+
+#### 3.FAQ
+
+###### 3.1. 版本
+```
+Error encountered, bailing. Network state unknown. Review successful transactions manually.
+Error: exceeds block gas limit
+```
+可能是版本不对
+
+###### 3.2.没有account
+```
+Error: Expected parameter 'from' not passed to function.
+```
+there is no account
+
+###### 3.3. 解锁用户
+```
+Error encountered, bailing. Network state unknown. Review successful transactions manually.
+Error: authentication needed: password or unlock
+```
